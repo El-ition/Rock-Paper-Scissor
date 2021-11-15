@@ -1,0 +1,17 @@
+.score {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  border: 1px solid $text-color;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 0 auto;
+
+  .score__detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
