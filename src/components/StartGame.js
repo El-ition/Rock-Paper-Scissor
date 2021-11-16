@@ -10,7 +10,7 @@ function StartGame() {
   const [pictureCode, setPictureCode] = useState(null);
   const [isClicked, setIsClicked] = useState(false);
   const [computerCode, setComputerCode] = useState(null);
-  const [score, setScore] = useState(4);
+  const [score, setScore] = useState(-2);
   const [title, setTitle] = useState('');
   const [gameEnds, setGameEnds] = useState(false);
 
@@ -44,7 +44,7 @@ function StartGame() {
     }
   }, [pictureCode, computerCode]);
   useEffect(() => {
-    setGameEnds(score === 5 || score === -5);
+    setGameEnds(score === 3 || score === -3);
   }, [score]);
   console.log(gameEnds);
 
@@ -75,7 +75,7 @@ function StartGame() {
         <div>
           <Score score={score} />
           {!isClicked ? (
-            <div>
+            <div className="startgame">
               <img onClick={handleClickOnPaper} src={paperImg} alt="paper" />
               <img onClick={handleClickOnRock} src={rockImg} alt="rock" />
               <img

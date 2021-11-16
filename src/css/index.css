@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&family=Open+Sans:wght@300;400;600;700;800&display=swap");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: Nunito Sans;
+  font-family: Open Sans;
   background-color: #222;
   color: #fff;
 }
@@ -59,5 +59,170 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.startgame {
+  max-width: 40%;
+  margin: 3rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem;
+}
+
+.startgame img {
+  width: 110px;
+}
+
+.startgame img:hover {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-transform: scale(1.6);
+          transform: scale(1.6);
+  cursor: pointer;
+}
+
+.win {
+  background-color: #186dcf;
+}
+
+.lose {
+  background-color: #c34;
+}
+
+.tie {
+  background-color: #1d1d1d;
+}
+
+.finalgame {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 8px 17px -3px rgba(252, 252, 252, 0.253);
+          box-shadow: 0 8px 17px -3px rgba(252, 252, 252, 0.253);
+  margin: 5rem auto;
+  padding: 1.2rem;
+}
+
+.finalgame h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.finalgame .finalgame__yourpick,
+.finalgame .finalgame__computerpick {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem;
+  margin: 0 1rem;
+}
+
+.finalgame .finalgame__yourpick img,
+.finalgame .finalgame__computerpick img {
+  padding: 0.5rem;
+  width: 80px;
+}
+
+.finalgame .finalgame_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.finalgame button {
+  color: #222;
+  font-family: inherit;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.2rem;
+}
+
+.finalgame button:hover {
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  color: #fff;
+  background-color: #222;
+}
+
+.endgame {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+}
+
+.endgame .endgame__blank {
+  height: 5px;
+  width: 100%;
+  background-color: red;
+}
+
+.endgame .win {
+  background-color: #186dcf;
+}
+
+.endgame .lose {
+  background-color: #c34;
+}
+
+.endgame .tie {
+  background-color: #1d1d1d;
+}
+
+.endgame h2 {
+  font-weight: 400;
+  margin-top: 0.7rem;
+}
+
+.endgame button {
+  color: #222;
+  font-family: inherit;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.2rem;
+  margin: 1rem;
+}
+
+.endgame button:hover {
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  color: #fff;
+  background-color: #222;
 }
 /*# sourceMappingURL=index.css.map */

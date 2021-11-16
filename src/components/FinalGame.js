@@ -10,9 +10,19 @@ function FinalGame({ code, setIsClicked, computerCode, score, title }) {
 
   // console.log(computerCode);
   return (
-    <div>
-      <div>
-        <h2>you picked</h2>
+    <div
+      className={`finalgame ${
+        title === 'You Win!!'
+          ? 'win'
+          : title === 'You Lose!'
+          ? 'lose'
+          : title === 'Tie'
+          ? 'tie'
+          : ''
+      }`}
+    >
+      <div className="finalgame__yourpick">
+        <h2>your picked</h2>
         <img
           src={
             code === 1
@@ -26,12 +36,12 @@ function FinalGame({ code, setIsClicked, computerCode, score, title }) {
           alt="your picked"
         />
       </div>
-      <div>
+      <div className="finalgame_title">
         <h2>{title}</h2>
         <button onClick={handleBack}>play again</button>
       </div>
-      <div>
-        <h2>you picked</h2>
+      <div className="finalgame__computerpick">
+        <h2>computer picked</h2>
         <img
           src={
             computerCode === 1

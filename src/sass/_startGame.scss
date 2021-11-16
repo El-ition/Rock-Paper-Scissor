@@ -1,0 +1,16 @@
+.startgame {
+  max-width: 40%;
+  margin: 3rem auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  img {
+    width: 110px;
+  }
+
+  img:hover {
+    transition: 0.4s;
+    transform: scale(1.6);
+    cursor: pointer;
+  }
+}

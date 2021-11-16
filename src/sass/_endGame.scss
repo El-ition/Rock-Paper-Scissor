@@ -1,0 +1,41 @@
+.endgame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  .endgame__blank {
+    height: 5px;
+    width: 100%;
+    background-color: red;
+  }
+  .win {
+    background-color: rgb(24, 109, 207);
+  }
+  .lose {
+    background-color: #c34;
+  }
+  .tie {
+    background-color: rgb(29, 29, 29);
+  }
+  h2 {
+    font-weight: 400;
+    margin-top: 0.7rem;
+  }
+  button {
+    color: $bacground-color;
+    font-family: inherit;
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.2rem;
+    margin: 1rem;
+
+    &:hover {
+      transition: 0.4s ease-in-out;
+      color: $text-color;
+      background-color: $bacground-color;
+    }
+  }
+}
