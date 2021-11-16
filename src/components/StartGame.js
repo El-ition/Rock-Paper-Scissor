@@ -4,13 +4,15 @@ import paperImg from '../images/icon-paper.svg';
 import rockImg from '../images/icon-rock.svg';
 import scissorsImg from '../images/icon-scissors.svg';
 import Score from './Score';
+import EndGame from './EndGame';
 
 function StartGame() {
   const [pictureCode, setPictureCode] = useState(null);
   const [isClicked, setIsClicked] = useState(false);
   const [computerCode, setComputerCode] = useState(null);
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(4);
   const [title, setTitle] = useState('');
+  const [gameEnds, setGameEnds] = useState(false);
 
   useEffect(() => {
     if (pictureCode === 1 && computerCode === 3) {
@@ -41,6 +43,10 @@ function StartGame() {
       setTitle('Tie');
     }
   }, [pictureCode, computerCode]);
+  useEffect(() => {
+    setGameEnds(score === 5 || score === -5);
+  }, [score]);
+  console.log(gameEnds);
 
   console.log(`real Score : ${score}`);
   console.log(title);
@@ -65,25 +71,36 @@ function StartGame() {
   };
   return (
     <div>
-      <Score score={score} />
-      {!isClicked ? (
+      {!gameEnds ? (
         <div>
-          <img onClick={handleClickOnPaper} src={paperImg} alt="paper" />
-          <img onClick={handleClickOnRock} src={rockImg} alt="rock" />
-          <img
-            onClick={handleClickOnScissor}
-            src={scissorsImg}
-            alt="scissors"
-          />
-          {/* <button onClick={initialCompCode}>rand</button> */}
+          <Score score={score} />
+          {!isClicked ? (
+            <div>
+              <img onClick={handleClickOnPaper} src={paperImg} alt="paper" />
+              <img onClick={handleClickOnRock} src={rockImg} alt="rock" />
+              <img
+                onClick={handleClickOnScissor}
+                src={scissorsImg}
+                alt="scissors"
+              />
+            </div>
+          ) : (
+            <FinalGame
+              code={pictureCode}
+              setIsClicked={setIsClicked}
+              computerCode={computerCode}
+              score={score}
+              title={title}
+            />
+          )}
         </div>
       ) : (
-        <FinalGame
-          code={pictureCode}
-          setIsClicked={setIsClicked}
-          computerCode={computerCode}
-          score={score}
+        <EndGame
           title={title}
+          setGameEnds={setGameEnds}
+          setTitle={setTitle}
+          setScore={setScore}
+          setIsClicked={setIsClicked}
         />
       )}
     </div>
